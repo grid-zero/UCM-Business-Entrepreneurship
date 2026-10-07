@@ -1,5 +1,5 @@
-# Decap CMS configuration
-# Docs: https://decapcms.org/docs/configuration-options/
+# Sveltia CMS configuration
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 
 backend:
   name: github
@@ -15,11 +15,13 @@ backend:
     uploadMedia: "Upload “{{path}}”"
     deleteMedia: "Delete “{{path}}”"
 
-# Lets you use the admin locally without logging in (run `npm run cms` next to `npm start`)
-local_backend: true
 
 media_folder: src/assets/images/uploads
 public_folder: /assets/images/uploads
+media_libraries:
+  default:
+    config:
+      slugify_filename: true   # "My Photo.JPG" → "my-photo.jpg"
 
 collections:
   # ------------------------------------------------------------------ News

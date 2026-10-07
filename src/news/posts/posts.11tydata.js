@@ -1,4 +1,4 @@
-// Shared settings for every news post created in Decap CMS.
+// Shared settings for every news post created in Sveltia CMS.
 export default {
   layout: "layouts/post.njk",
   eleventyComputed: {
