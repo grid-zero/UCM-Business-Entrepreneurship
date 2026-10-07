@@ -1,5 +1,5 @@
 ---
-layout: layouts/page.njk
+layout: layouts/page.html
 title: Partnerships
 eyebrow: Partnerships
 lead: The organisations that help us connect students with opportunity.
@@ -10,19 +10,19 @@ permalink: /partnerships/
     <div class="section-intro">
       <p class="eyebrow eyebrow--dark">Collaboration</p>
       <h2>Partner Clubs</h2>
-      {% if partners.clubsIntro %}<p class="lead-muted">{{ partners.clubsIntro }}</p>{% endif %}
+      {% if partners.clubsIntro != blank %}<p class="lead-muted">{{ partners.clubsIntro }}</p>{% endif %}
     </div>
 
     <div class="partner-grid">
       {% for club in partners.clubs %}
       <article class="partner-card">
         <div class="partner-logo">
-          {% if club.logo %}<img src="{{ club.logo }}" alt="{{ club.name }} logo" loading="lazy">
+          {% if club.logo != blank %}<img src="{{ club.logo }}" alt="{{ club.name | escape }} logo" loading="lazy">
           {% else %}<span aria-hidden="true">{{ club.name | initials }}</span>{% endif %}
         </div>
         <h3>{{ club.name }}</h3>
-        {% if club.description %}<p>{{ club.description }}</p>{% endif %}
-        {% if club.url %}<a class="text-link" href="{{ club.url }}" rel="noopener">Visit website <span aria-hidden="true">&rarr;</span></a>{% endif %}
+        {% if club.description != blank %}<p>{{ club.description }}</p>{% endif %}
+        {% if club.url != blank %}<a class="text-link" href="{{ club.url }}" rel="noopener">Visit website <span aria-hidden="true">&rarr;</span></a>{% endif %}
       </article>
       {% endfor %}
     </div>
@@ -34,19 +34,19 @@ permalink: /partnerships/
     <div class="section-intro">
       <p class="eyebrow eyebrow--dark">Support</p>
       <h2>Our Sponsors</h2>
-      {% if partners.sponsorsIntro %}<p class="lead-muted">{{ partners.sponsorsIntro }}</p>{% endif %}
+      {% if partners.sponsorsIntro != blank %}<p class="lead-muted">{{ partners.sponsorsIntro }}</p>{% endif %}
     </div>
 
     <div class="sponsor-grid">
       {% for sponsor in partners.sponsors %}
-      <article class="sponsor-card{% if loop.first and sponsor.tier %} sponsor-card--featured{% endif %}">
-        {% if sponsor.tier %}<p class="sponsor-tier">{{ sponsor.tier }}</p>{% endif %}
+      <article class="sponsor-card{% if forloop.first and sponsor.tier != blank %} sponsor-card--featured{% endif %}">
+        {% if sponsor.tier != blank %}<p class="sponsor-tier">{{ sponsor.tier }}</p>{% endif %}
         <div class="sponsor-logo">
-          {% if sponsor.logo %}<img src="{{ sponsor.logo }}" alt="{{ sponsor.name }} logo" loading="lazy">
+          {% if sponsor.logo != blank %}<img src="{{ sponsor.logo }}" alt="{{ sponsor.name | escape }} logo" loading="lazy">
           {% else %}<span>{{ sponsor.name }}</span>{% endif %}
         </div>
-        {% if sponsor.description %}<p>{{ sponsor.description }}</p>{% endif %}
-        {% if sponsor.url %}<a class="text-link" href="{{ sponsor.url }}" rel="noopener">Visit website <span aria-hidden="true">&rarr;</span></a>{% endif %}
+        {% if sponsor.description != blank %}<p>{{ sponsor.description }}</p>{% endif %}
+        {% if sponsor.url != blank %}<a class="text-link" href="{{ sponsor.url }}" rel="noopener">Visit website <span aria-hidden="true">&rarr;</span></a>{% endif %}
       </article>
       {% endfor %}
     </div>

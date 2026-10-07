@@ -1,5 +1,5 @@
 ---
-layout: layouts/page.njk
+layout: layouts/page.html
 title: Contact
 eyebrow: Contact
 lead: Questions, ideas, or partnership proposals. We would be glad to hear from you.
@@ -20,11 +20,11 @@ permalink: /contact/
       <address class="contact-address">
         {%- for line in site.address %}{{ line }}<br>{% endfor -%}
       </address>
-      {% if site.linkedin or site.instagram %}
+      {% if site.linkedin != blank or site.instagram != blank %}
       <p class="eyebrow eyebrow--dark contact-social-label">Follow us</p>
       <ul class="contact-social">
-        {% if site.linkedin %}<li><a class="text-link" href="{{ site.linkedin }}" rel="noopener">LinkedIn <span aria-hidden="true">&rarr;</span></a></li>{% endif %}
-        {% if site.instagram %}<li><a class="text-link" href="{{ site.instagram }}" rel="noopener">Instagram <span aria-hidden="true">&rarr;</span></a></li>{% endif %}
+        {% if site.linkedin != blank %}<li><a class="text-link" href="{{ site.linkedin }}" rel="noopener">LinkedIn <span aria-hidden="true">&rarr;</span></a></li>{% endif %}
+        {% if site.instagram != blank %}<li><a class="text-link" href="{{ site.instagram }}" rel="noopener">Instagram <span aria-hidden="true">&rarr;</span></a></li>{% endif %}
       </ul>
       {% endif %}
     </div>
@@ -40,9 +40,9 @@ permalink: /contact/
     </div>
     <div class="faq">
       {% for item in faq.items %}
-      <details class="faq-item"{% if loop.first %} open{% endif %}>
+      <details class="faq-item"{% if forloop.first != blank %} open{% endif %}>
         <summary>{{ item.question }}</summary>
-        <div class="faq-answer">{{ item.answer | markdown | safe }}</div>
+        <div class="faq-answer">{{ item.answer | markdown }}</div>
       </details>
       {% endfor %}
     </div>

@@ -69,8 +69,7 @@ export default function (eleventyConfig) {
       data: "_data",
       output: "_site",
     },
-    templateFormats: ["njk", "md", "html"],
-    markdownTemplateEngine: "njk",
-    htmlTemplateEngine: "njk",
+    // .html and .md files are processed with Liquid (Eleventy's default engine)
+    templateFormats: ["md", "html"],
   };
 }

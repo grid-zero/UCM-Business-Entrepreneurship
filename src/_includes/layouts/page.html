@@ -1,12 +1,12 @@
 ---
-layout: layouts/base.njk
+layout: layouts/base.html
 ---
 <header class="page-hero">
   <div class="container">
-    {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+    {% if eyebrow != blank %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
     <h1>{{ title }}</h1>
-    {% if lead %}<p class="page-lead">{{ lead }}</p>{% endif %}
+    {% if lead != blank %}<p class="page-lead">{{ lead }}</p>{% endif %}
   </div>
 </header>
 
-{{ content | safe }}
+{{ content }}

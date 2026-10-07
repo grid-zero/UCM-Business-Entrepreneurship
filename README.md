@@ -7,7 +7,7 @@ It is built with [Eleventy](https://www.11ty.dev/), hosted on **GitHub Pages**, 
 
 | Page | Content | Where it is edited |
 |---|---|---|
-| Home | Hero, activities, latest news | `src/index.njk` |
+| Home | Hero, activities, latest news | `src/index.html` |
 | About | About Us, History, Board (President, Treasurer, Secretary) | Club Information |
 | Partnerships | Partner Clubs and Our Sponsors | Club Information |
 | News | All posts, with category filter | News & Posts |
@@ -52,13 +52,13 @@ In the admin console, go to **News & Posts** then click **New Post** and fill in
 ```
 src/
   _data/            Site content edited via the CMS (JSON)
-  _includes/        Layouts and partials (header, footer, cards)
+  _includes/        Liquid layouts and partials (header, footer, cards)
   admin/            Sveltia CMS admin console and its config.yml
   assets/           CSS, JavaScript, images (CMS uploads go to images/uploads)
   news/posts/       News posts as Markdown files
-  index.njk         Home
-  about.njk         About
-  partnerships.njk  Partnerships
-  contact.njk       Contact
+  index.html        Home
+  about.html        About
+  partnerships.html Partnerships
+  contact.html      Contact
 eleventy.config.js  Eleventy configuration
 ```

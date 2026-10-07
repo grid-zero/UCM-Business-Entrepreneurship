@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title and page.url != "/" %}{{ title }} · {% endif %}{{ site.name }}</title>
-  <meta name="description" content="{{ description or summary or site.description }}">
-  <meta property="og:title" content="{{ title or site.name }}">
-  <meta property="og:description" content="{{ description or summary or site.description }}">
-  <meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
+  <meta name="description" content="{{ description | default: summary | default: site.description | escape }}">
+  <meta property="og:title" content="{{ title | default: site.name | escape }}">
+  <meta property="og:description" content="{{ description | default: summary | default: site.description | escape }}">
+  <meta property="og:type" content="{% if layout == 'layouts/post.html' %}article{% else %}website{% endif %}">
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,13 +17,13 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  {% include "partials/header.njk" %}
+  {% include "partials/header.html" %}
 
   <main id="main">
-    {{ content | safe }}
+    {{ content }}
   </main>
 
-  {% include "partials/footer.njk" %}
+  {% include "partials/footer.html" %}
 
   <script src="/assets/js/main.js" defer></script>
 </body>

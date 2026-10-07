@@ -1,7 +1,7 @@
 <header class="site-header" data-header>
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label="{{ site.name }}, home">
-      {% include "partials/logo.njk" %}
+    <a class="brand" href="/" aria-label="{{ site.name | escape }}, home">
+      {% include "partials/logo.html" %}
       <span class="brand-text">
         <span class="brand-name">{{ site.shortName }}</span>
         <span class="brand-sub">{{ site.school }}</span>
@@ -17,7 +17,8 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         {%- for item in navigation %}
-        <li><a href="{{ item.url }}"{% if page.url | isActive(item.url) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {%- assign active = page.url | isActive: item.url %}
+        <li><a href="{{ item.url }}"{% if active %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
         {%- endfor %}
       </ul>
     </nav>
