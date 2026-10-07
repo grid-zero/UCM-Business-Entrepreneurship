@@ -1,0 +1,29 @@
+{
+  "intro": "The club is run by a student board elected by its members for one academic year.",
+  "members": [
+    {
+      "name": "President Name",
+      "role": "President",
+      "study": "Liberal Arts & Sciences, UCM",
+      "bio": "Leads the club's strategy and represents the club towards the university, partners and sponsors.",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "Treasurer Name",
+      "role": "Treasurer",
+      "study": "Liberal Arts & Sciences, UCM",
+      "bio": "Manages the club's finances, budgets for events, and oversees sponsorship agreements.",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "Secretary Name",
+      "role": "Secretary",
+      "study": "Liberal Arts & Sciences, UCM",
+      "bio": "Keeps the club organised: member communication, meeting minutes, and event coordination.",
+      "photo": "",
+      "linkedin": ""
+    }
+  ]
+}

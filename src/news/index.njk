@@ -1,0 +1,29 @@
+---
+layout: layouts/page.njk
+title: News
+eyebrow: News & events
+lead: Announcements, event recaps and opportunities from the club.
+permalink: /news/
+---
+<section class="section">
+  <div class="container">
+    {% if collections.posts.length %}
+      {%- set categories = collections.posts | categories %}
+
+      {% if categories.length > 1 %}
+      <div class="filter-bar" role="group" aria-label="Filter news by category" data-filter-bar>
+        <button type="button" class="filter-chip" aria-pressed="true" data-filter="all">All</button>
+        {% for category in categories %}
+        <button type="button" class="filter-chip" aria-pressed="false" data-filter="{{ category | slugify }}">{{ category }}</button>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="post-grid" data-post-grid>
+        {% for post in collections.posts %}{% include "partials/post-card.njk" %}{% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-state">No news yet. Check back soon.</p>
+    {% endif %}
+  </div>
+</section>

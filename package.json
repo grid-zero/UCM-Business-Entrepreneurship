@@ -1,0 +1,19 @@
+{
+  "name": "ucm-entrepreneurs-club",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website for the UCM Entrepreneurs Club at University College Maastricht",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "cms": "decap-server"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "decap-server": "^3.1.0"
+  }
+}

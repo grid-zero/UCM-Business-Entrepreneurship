@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <header class="post-hero">
+    <div class="container container--narrow">
+      <a class="back-link" href="/news/"><span aria-hidden="true">&larr;</span> All news</a>
+      <p class="post-meta post-meta--light">
+        {% if category %}<span class="post-category">{{ category }}</span>{% endif %}
+        <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+        {% if author %}<span>By {{ author }}</span>{% endif %}
+      </p>
+      <h1>{{ title }}</h1>
+      {% if summary %}<p class="page-lead">{{ summary }}</p>{% endif %}
+    </div>
+  </header>
+
+  <div class="container container--narrow post-content">
+    {% if image %}
+    <figure class="post-image">
+      <img src="{{ image }}" alt="{{ image_alt or '' }}">
+    </figure>
+    {% endif %}
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
+
+{%- set others = collections.posts | without(page.url) | limit(3) %}
+{% if others.length %}
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>More from the club</h2>
+      <a class="text-link" href="/news/">All news <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="post-grid">
+      {% for post in others %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

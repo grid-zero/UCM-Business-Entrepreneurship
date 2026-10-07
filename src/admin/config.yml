@@ -1,0 +1,166 @@
+# Decap CMS configuration
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # TODO: replace with your repository
+  branch: main
+  # GitHub Pages cannot handle the GitHub login itself, so an OAuth proxy is needed.
+  # See README.md, "Setting up the admin login". Uncomment once deployed:
+  # base_url: https://your-oauth-proxy.your-account.workers.dev
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
+
+# Lets you use the admin locally without logging in (run `npm run cms` next to `npm start`)
+local_backend: true
+
+media_folder: src/assets/images/uploads
+public_folder: /assets/images/uploads
+
+collections:
+  # ------------------------------------------------------------------ News
+  - name: news
+    label: News & Posts
+    label_singular: Post
+    description: Articles, announcements and event recaps shown on the News page.
+    folder: src/news/posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}} · {{date | date('D MMM YYYY')}}{{draft | ternary(' · DRAFT', '')}}"
+    sortable_fields: [date, title, category]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Publish date
+        name: date
+        widget: datetime
+        format: YYYY-MM-DD
+        date_format: D MMMM YYYY
+        time_format: false
+      - label: Category
+        name: category
+        widget: select
+        options: [Announcement, Community Event, Industry Event, Builders, Recap, Opportunity]
+        default: Announcement
+      - { label: Author, name: author, widget: string, default: The Board, required: false }
+      - label: Summary
+        name: summary
+        widget: text
+        hint: One or two sentences shown on the news cards and at the top of the article.
+      - { label: Cover image, name: image, widget: image, required: false }
+      - { label: Cover image description (for accessibility), name: image_alt, widget: string, required: false }
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: false
+        hint: Drafts are saved but not shown on the website.
+      - { label: Body, name: body, widget: markdown }
+
+  # ------------------------------------------------------------- Club info
+  - name: club
+    label: Club Information
+    description: Content for the About, Partnerships and Contact pages.
+    editor:
+      preview: false
+    files:
+      - name: about
+        label: About page (About Us & History)
+        file: src/_data/about.json
+        fields:
+          - { label: About Us text, name: intro, widget: markdown }
+          - { label: Mission statement, name: mission, widget: text }
+          - label: Activities
+            name: pillars
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+          - label: History
+            name: history
+            widget: list
+            summary: "{{year}} · {{title}}"
+            fields:
+              - { label: Year, name: year, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+
+      - name: board
+        label: Board members
+        file: src/_data/board.json
+        fields:
+          - { label: Introduction, name: intro, widget: text, required: false }
+          - label: Members
+            name: members
+            widget: list
+            summary: "{{role}} · {{name}}"
+            fields:
+              - label: Role
+                name: role
+                widget: select
+                options: [President, Treasurer, Secretary, Vice-President, Board Member]
+              - { label: Name, name: name, widget: string }
+              - { label: Study programme, name: study, widget: string, required: false }
+              - { label: Short bio, name: bio, widget: text, required: false }
+              - { label: Photo, name: photo, widget: image, required: false }
+              - { label: LinkedIn URL, name: linkedin, widget: string, required: false }
+
+      - name: partners
+        label: Partner clubs & sponsors
+        file: src/_data/partners.json
+        fields:
+          - { label: Partner clubs introduction, name: clubsIntro, widget: text, required: false }
+          - label: Partner clubs
+            name: clubs
+            widget: list
+            summary: "{{name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Website, name: url, widget: string, required: false }
+              - { label: Logo, name: logo, widget: image, required: false }
+          - { label: Sponsors introduction, name: sponsorsIntro, widget: text, required: false }
+          - label: Sponsors
+            name: sponsors
+            widget: list
+            summary: "{{tier}} · {{name}}"
+            hint: The first sponsor in the list is highlighted.
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Tier, name: tier, widget: string, required: false, hint: "e.g. Main sponsor, Sponsor, Supporter" }
+              - { label: Description, name: description, widget: text, required: false }
+              - { label: Website, name: url, widget: string, required: false }
+              - { label: Logo, name: logo, widget: image, required: false }
+
+      - name: faq
+        label: Frequently Asked Questions
+        file: src/_data/faq.json
+        fields:
+          - label: Questions
+            name: items
+            widget: list
+            summary: "{{question}}"
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: markdown }
+
+      - name: site
+        label: General settings & contact details
+        file: src/_data/site.json
+        fields:
+          - { label: Club name, name: name, widget: string }
+          - { label: Short name (header), name: shortName, widget: string }
+          - { label: Tagline (home page headline), name: tagline, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Contact email, name: email, widget: string }
+          - { label: University, name: university, widget: string }
+          - { label: School, name: school, widget: string }
+          - { label: Address lines, name: address, widget: list }
+          - { label: LinkedIn URL, name: linkedin, widget: string, required: false }
+          - { label: Instagram URL, name: instagram, widget: string, required: false }

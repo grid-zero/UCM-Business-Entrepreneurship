@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "question": "Who can join the club?",
+      "answer": "Any student at University College Maastricht can join. Students from other Maastricht University faculties are welcome at most of our events as well."
+    },
+    {
+      "question": "Do I need a business idea to join?",
+      "answer": "No. Many of our members are simply curious about entrepreneurship. Our events are a good place to find an idea, a co-founder, or a team that needs your skills."
+    },
+    {
+      "question": "Is there a membership fee?",
+      "answer": "Please get in touch by email for the current membership details. Most of our community events are free to attend."
+    },
+    {
+      "question": "How can I work with engineering or computer science students?",
+      "answer": "We organise matchmaking sessions where founders present their ideas and technical students can join projects that interest them. Follow our News page for upcoming sessions."
+    },
+    {
+      "question": "My company would like to give a talk or offer internships. How do we get involved?",
+      "answer": "We are always looking for companies to take part in our industry events. Email us with a short introduction and we will get back to you to discuss the options."
+    },
+    {
+      "question": "How do I join the board?",
+      "answer": "Board elections take place once per academic year. Members are informed in advance and anyone interested is encouraged to apply."
+    }
+  ]
+}

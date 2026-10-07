@@ -1,0 +1,47 @@
+{
+  "clubsIntro": "We work alongside other student organisations to run joint events and open our activities to a wider audience.",
+  "clubs": [
+    {
+      "name": "Partner Club One",
+      "description": "Short description of the partner club and what you do together, such as joint workshops or networking events.",
+      "url": "",
+      "logo": ""
+    },
+    {
+      "name": "Partner Club Two",
+      "description": "Short description of the partner club and what you do together, such as a shared speaker series.",
+      "url": "",
+      "logo": ""
+    },
+    {
+      "name": "Partner Club Three",
+      "description": "Short description of the partner club and what you do together, such as engineering and design collaborations.",
+      "url": "",
+      "logo": ""
+    }
+  ],
+  "sponsorsIntro": "Our sponsors make our events possible and give our members direct access to industry. We are grateful for their support.",
+  "sponsors": [
+    {
+      "name": "Sponsor Name",
+      "tier": "Main sponsor",
+      "description": "A short line about the sponsor and how they support the club.",
+      "url": "",
+      "logo": ""
+    },
+    {
+      "name": "Sponsor Name",
+      "tier": "Sponsor",
+      "description": "A short line about the sponsor and how they support the club.",
+      "url": "",
+      "logo": ""
+    },
+    {
+      "name": "Sponsor Name",
+      "tier": "Sponsor",
+      "description": "A short line about the sponsor and how they support the club.",
+      "url": "",
+      "logo": ""
+    }
+  ]
+}

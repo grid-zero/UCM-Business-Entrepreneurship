@@ -1,0 +1,40 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand--light" href="/">
+        {% include "partials/logo.njk" %}
+        <span class="brand-text">
+          <span class="brand-name">{{ site.shortName }}</span>
+          <span class="brand-sub">{{ site.school }}</span>
+        </span>
+      </a>
+      <p>{{ site.tagline }}</p>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">Navigate</h2>
+      <ul class="footer-links">
+        {%- for item in navigation %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">Contact</h2>
+      <ul class="footer-links">
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        {%- if site.linkedin %}<li><a href="{{ site.linkedin }}" rel="noopener">LinkedIn</a></li>{% endif %}
+        {%- if site.instagram %}<li><a href="{{ site.instagram }}" rel="noopener">Instagram</a></li>{% endif %}
+      </ul>
+      <address class="footer-address">
+        {%- for line in site.address %}{{ line }}<br>{% endfor -%}
+      </address>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; {% year %} {{ site.name }}</p>
+    <p>A student organisation at {{ site.school }}, {{ site.university }}.</p>
+  </div>
+</footer>

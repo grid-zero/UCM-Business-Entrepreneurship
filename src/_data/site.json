@@ -1,0 +1,17 @@
+{
+  "name": "UCM Entrepreneurs Club",
+  "shortName": "UCM Entrepreneurs",
+  "tagline": "Where Maastricht's next founders meet.",
+  "description": "The student entrepreneurship club of University College Maastricht. We connect aspiring founders with each other, with industry, and with the engineers who help turn ideas into products.",
+  "email": "entrepreneurs@example.com",
+  "university": "Maastricht University",
+  "school": "University College Maastricht",
+  "address": [
+    "University College Maastricht",
+    "Zwingelput 4",
+    "6211 KH Maastricht",
+    "The Netherlands"
+  ],
+  "linkedin": "",
+  "instagram": ""
+}

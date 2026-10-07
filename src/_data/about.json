@@ -1,0 +1,35 @@
+{
+  "intro": "The UCM Entrepreneurs Club is a student organisation at University College Maastricht for anyone who wants to build something of their own: a company, a social venture, a product, or simply a sharper understanding of how businesses are started and grown.\n\nWe believe good ideas rarely come to life in isolation. Founders need peers who challenge them, mentors who have walked the road before, and collaborators with skills they do not yet have. Our club exists to put those people in the same room.",
+  "mission": "To give every student at University College Maastricht the network, knowledge and collaborators they need to turn an idea into a venture.",
+  "pillars": [
+    {
+      "title": "A community of founders",
+      "text": "Regular meetups where students pitch ideas, give honest feedback, and help each other with the practical problems of starting out."
+    },
+    {
+      "title": "A bridge to industry",
+      "text": "Talks and sessions with companies, founders and investors from the region, with a direct line to internships and career opportunities."
+    },
+    {
+      "title": "A place to build",
+      "text": "Connections with engineering and computer science students so that business ideas can become working prototypes and products."
+    }
+  ],
+  "history": [
+    {
+      "year": "2026",
+      "title": "The club is founded",
+      "text": "A group of UCM students with an interest in starting businesses comes together to create a home for entrepreneurship within the college."
+    },
+    {
+      "year": "2026",
+      "title": "First community events",
+      "text": "The club hosts its first networking evenings and idea sessions, bringing together students from across Maastricht University."
+    },
+    {
+      "year": "Next",
+      "title": "Growing the network",
+      "text": "We are building partnerships with companies, fellow student organisations and technical faculties to bring more opportunities to our members."
+    }
+  ]
+}

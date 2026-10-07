@@ -1,0 +1,109 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ site.school }} &middot; {{ site.university }}</p>
+      <h1>{{ site.tagline }}</h1>
+      <p class="hero-lead">{{ site.description }}</p>
+      <div class="button-row">
+        <a class="button button--primary" href="/contact/">Get involved</a>
+        <a class="button button--ghost" href="/about/">About the club</a>
+      </div>
+    </div>
+
+    <aside class="hero-panel" aria-label="What we do">
+      <p class="hero-panel-label">What we do</p>
+      <ol class="hero-list">
+        <li>
+          <span class="hero-list-num">01</span>
+          <div><strong>Community events</strong><span>Meet fellow founders, share ideas and grow together.</span></div>
+        </li>
+        <li>
+          <span class="hero-list-num">02</span>
+          <div><strong>Industry connections</strong><span>Talks, insights and internships from leading companies.</span></div>
+        </li>
+        <li>
+          <span class="hero-list-num">03</span>
+          <div><strong>Build with engineers</strong><span>Team up with engineering and CS students to bring ideas to life.</span></div>
+        </li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-intro">
+      <p class="eyebrow eyebrow--dark">Our activities</p>
+      <h2>Three ways we help students turn ideas into ventures</h2>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar">
+        <span class="pillar-num">01</span>
+        <h3>Community events</h3>
+        <p>Informal meetups, pitch nights and idea sessions where young entrepreneurs meet, discuss their ideas, and help each other move forward. Whether you are validating a first idea or already running a side business, you will find people who understand the journey.</p>
+      </article>
+      <article class="pillar">
+        <span class="pillar-num">02</span>
+        <h3>Industry connections</h3>
+        <p>We bring companies, founders and investors onto campus to share how they work, what they look for, and where the opportunities are. Our industry events are a direct route to conversations about internships and careers.</p>
+      </article>
+      <article class="pillar">
+        <span class="pillar-num">03</span>
+        <h3>Build with engineers</h3>
+        <p>Great ideas need people who can build them. We connect our members with engineering and computer science students to form teams, create prototypes, and bring products to life.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container split">
+    <div>
+      <p class="eyebrow eyebrow--dark">Why join</p>
+      <h2>A serious network for students who want to build</h2>
+      <p class="lead-muted">The club is open to every UCM student, regardless of background or study track. You do not need a business plan, only the ambition to learn how ideas become companies.</p>
+      <a class="text-link" href="/about/">Learn more about us <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <ul class="checklist">
+      <li><strong>Peers who push you further.</strong> Honest feedback on your ideas from people who are building too.</li>
+      <li><strong>Access to industry.</strong> Meet the companies and professionals shaping the region's economy.</li>
+      <li><strong>Technical co-founders.</strong> Find the engineers and developers your idea needs.</li>
+      <li><strong>Practical experience.</strong> Learn by doing: pitching, organising, and launching.</li>
+    </ul>
+  </div>
+</section>
+
+{% if collections.posts.length %}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow eyebrow--dark">Latest news</p>
+        <h2>From the club</h2>
+      </div>
+      <a class="text-link" href="/news/">All news <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="post-grid">
+      {% for post in collections.posts | limit(3) %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>Partner with the next generation of founders</h2>
+      <p>Companies, sponsors and student organisations: we would like to hear from you.</p>
+    </div>
+    <div class="button-row">
+      <a class="button button--primary" href="/partnerships/">Partnerships</a>
+      <a class="button button--ghost" href="mailto:{{ site.email }}">Email us</a>
+    </div>
+  </div>
+</section>
