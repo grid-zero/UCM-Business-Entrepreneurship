@@ -3,7 +3,7 @@
 
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # TODO: replace with your repository
+  repo: grid-zero/UCM-Business-Entrepreneurship   # TODO: replace with your repository
   branch: main
   # GitHub Pages cannot handle the GitHub login itself, so an OAuth proxy is needed.
   # See README.md, "Setting up the admin login". Uncomment once deployed:
